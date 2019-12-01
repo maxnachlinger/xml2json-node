@@ -8,6 +8,11 @@
 
 Inspired by this awesome, unmaintained, library: https://github.com/node-monk/xml-conv-json
 
+### Install
+```bash
+npm i xml2json-node
+```
+
 ### Example / API
 ```javascript
 const xml2json = require('xml2json-node')
