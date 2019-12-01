@@ -1,6 +1,11 @@
 ## xml2json-node
 > Node wrapper around Cheedoong's c++ xml2json library with updated rapidjson and rapidxml libraries.
 
+[![travis][travis-image]][travis-url]
+
+[travis-image]: https://travis-ci.org/maxnachlinger/xml2json-node.svg?branch=master
+[travis-url]: https://travis-ci.org/maxnachlinger/xml2json-node
+
 Inspired by this awesome, unmaintained, library: https://github.com/node-monk/xml-conv-json
 
 ### Example / API
