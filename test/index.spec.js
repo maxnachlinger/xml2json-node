@@ -1,14 +1,20 @@
-"use strict";
+'use strict';
 
 const path = require("path");
 const fs = require("fs").promises;
-const toJson = require("../");
+const xml2json = require('../');
 
 describe("index.js tests", () => {
 
-  it('converts simple xml to json', () => {
+  it('rejects on bad input', async () => {
+    await expect(xml2json()).rejects.toThrow();
+    await expect(xml2json(null)).rejects.toThrow();
+    await expect(xml2json(1)).rejects.toThrow();
+  });
+
+  it('converts simple xml to json', async () => {
     const xmlString = `<person><name>Test</name><age>21</age></person>`
-    const jsonString = toJson(xmlString);
+    const jsonString = await xml2json(xmlString);
     const obj = JSON.parse(jsonString);
 
     expect(obj).toBeTruthy();
@@ -25,7 +31,7 @@ describe("index.js tests", () => {
       path.join(__dirname, "./fixture.xml"),
       "utf8"
     );
-    const jsonString = toJson(xmlString);
+    const jsonString = await xml2json(xmlString);
     const obj = JSON.parse(jsonString);
 
     expect(obj).toBeTruthy();

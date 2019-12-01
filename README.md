@@ -17,9 +17,13 @@ npm i xml2json-node
 ```javascript
 const xml2json = require('xml2json-node')
 
-const xmlString = `<person><name>Test</name><age>21</age></person>`
-const jsonString = xml2json(xmlString); // {"person":{"name":"Test","age":"21"}}
-const person = JSON.parse(jsonString); // { person: { name: 'Test', age: 21 } }
+const example = async () => {
+  const xmlString = `<person><name>Test</name><age>21</age></person>`
+  const jsonString = await xml2json(xmlString) // {"person":{"name":"Test","age":"21"}}
+  return JSON.parse(jsonString)
+}
+
+example() // { person: { name: 'Test', age: 21 } }
 ```
 
 ###  C++ sources:
