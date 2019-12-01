@@ -1,6 +1,6 @@
 {
   "name": "xml2json-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrapper around Cheedoong's c++ xml2json library",
   "main": "index.js",
   "scripts": {
